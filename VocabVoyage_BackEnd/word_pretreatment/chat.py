@@ -2,7 +2,7 @@ import requests
 import json
 
 
-def chat_with_model(content , prompt , model = "Llama3.1:8b"):
+def chat_with_model(content , prompt , model = "llama3.3:latest"):
     url = "http://localhost:11434/api/chat"
     data = {
         "model": model,
@@ -18,6 +18,7 @@ def chat_with_model(content , prompt , model = "Llama3.1:8b"):
         response = requests.post(url, json=data)
         response.raise_for_status()  # 检查请求是否成功
         result = response.json()  # 解析返回的JSON数据
+        print("成功获得结果")
         # print(result["message"]["content"])
         return result
 

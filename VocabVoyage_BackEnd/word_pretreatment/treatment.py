@@ -58,11 +58,11 @@ prompt = """
 
 # 设置文件路径
 words_file = 'data/words.csv'
-output_file = 'data/results.csv'
+output_file = 'data/results1.csv'
 
 # 检查是否已有结果文件，若存在则读取已处理的单词
 if os.path.exists(output_file):
-    existing_results = pd.read_csv(output_file)
+    existing_results = pd.readcsv(output_file)
     processed_words = set(existing_results['word'])
     
     results = existing_results.to_dict(orient="records")
@@ -85,7 +85,7 @@ words = words_df['word'].tolist()
 
 # 处理每个单词
 for i, word in enumerate(words):
-    if i>100:
+    if i>2000:
         break
     if word in processed_words:
         print(f"单词 '{word}' 已处理，跳过。")
