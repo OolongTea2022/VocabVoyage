@@ -3,6 +3,7 @@
 核心想法：让英语学习者在学习的过程中，不单单只是建立英文和中文映射，更能理解每一个单词。我们希望用户能借助大模型生成的内容，亦或是与大模型的交互中学习每个单词背后的内容，比如：词根词源、使用情景、内部逻辑等
 
 
+
 # 借助的单词资源
 
 backend 里面有关于单词预处理的东西，本来想通过 prompt 在一个还比较好服务器上自己去跑结果，但是最后是没能来得及完全处理8000词，只能暂时是通过以下两个库整合的单词数据库（英文、中文简译、详解）
@@ -10,6 +11,14 @@ backend 里面有关于单词预处理的东西，本来想通过 prompt 在一�
 [https://github.com/1eez/103976](https://github.com/1eez/103976)
 
 [https://github.com/Ceelog/DictionaryByGPT4?tab=readme-ov-file](https://github.com/Ceelog/DictionaryByGPT4?tab=readme-ov-file)
+
+# 预处理过程
+
+在 VocabVoyage_BackEnd/word_pretreatment 文件夹中主要是我们如何进行单词预处理的。包含了与大模型交流的程序，提示词，具体处理出来并转换格式后的数据
+
+# SQL相关
+
+跟数据库相关的完整命令，我们都放在了 VocabVoyage_BackEnd/sql/db.sql 这个文件中。包含了建表语句、视图、存储过程、触发器等的编写
 
 
 # 最后一些想说的
